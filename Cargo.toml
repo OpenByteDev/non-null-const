@@ -32,8 +32,7 @@ default = [
     "dispatch_from_dyn",
     "ptr_internals",
     "const_convert",
-    "const_index",
-    "extra"
+    "const_index"
 ]
 ptr_as_uninit = []
 ptr_cast_array = []
@@ -48,4 +47,3 @@ dispatch_from_dyn = []
 ptr_internals = []
 const_convert = []
 const_index = []
-extra = []

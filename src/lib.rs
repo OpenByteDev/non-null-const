@@ -1284,14 +1284,12 @@ impl<T: PointeeSized> const From<&T> for NonNullConst<T> {
 }
 
 // --- Extra traits and methods ---
-#[cfg(feature = "extra")]
 impl<T: PointeeSized> const From<NonNullMut<T>> for NonNullConst<T> {
     fn from(ptr: NonNullMut<T>) -> Self {
         Self(ptr)
     }
 }
 
-#[cfg(feature = "extra")]
 impl<T: PointeeSized> const From<NonNullConst<T>> for NonNullMut<T> {
     fn from(ptr: NonNullConst<T>) -> Self {
         ptr.0
