@@ -1,0 +1,51 @@
+[package]
+name = "non-null-const"
+version = "0.1.0"
+description = "A *const equivalent of NonNull<T>."
+readme = "README.md"
+repository = "https://github.com/OpenByteDev/non-null-const"
+documentation = "https://docs.rs/non-null-const"
+license = "MIT"
+authors = ["OpenByte <development.openbyte@gmail.com>"]
+edition = "2024"
+categories = [
+    "memory-management",
+    "no-std",
+    "rust-patterns"
+]
+keywords = ["pointer", "const"]
+
+[dependencies]
+cfg-tt = "0.3"
+
+[features]
+default = [
+    "ptr_as_uninit",
+    "ptr_cast_array",
+    "ptr_metadata",
+    "pointer_try_cast_aligned",
+    "const_drop_in_place",
+    "pointer_is_aligned_to",
+    "cast_maybe_uninit",
+    "slice_ptr_get",
+    "coerce_unsized",
+    "dispatch_from_dyn",
+    "ptr_internals",
+    "const_convert",
+    "const_index",
+    "extra"
+]
+ptr_as_uninit = []
+ptr_cast_array = []
+ptr_metadata = []
+pointer_try_cast_aligned = []
+const_drop_in_place = []
+pointer_is_aligned_to = []
+cast_maybe_uninit = []
+slice_ptr_get = []
+coerce_unsized = []
+dispatch_from_dyn = []
+ptr_internals = []
+const_convert = []
+const_index = []
+extra = []
