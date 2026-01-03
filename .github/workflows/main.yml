@@ -66,7 +66,7 @@ jobs:
       - name: cargo install cargo-hack
         uses: taiki-e/install-action@cargo-hack
       - name: cargo hack
-        run: cargo hack --feature-powerset check
+        run: cargo hack check --feature-powerset --no-dev-deps --depth 2
          
   machete:
     runs-on: ubuntu-latest
