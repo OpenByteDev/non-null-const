@@ -43,7 +43,7 @@ use core::ops::DispatchFromDyn;
 use core::ptr;
 #[cfg(feature = "ptr_internals")]
 use core::ptr::Unique;
-#[cfg(any(feature = "slice_ptr_get"))]
+#[cfg(feature = "slice_ptr_get")]
 use core::slice::SliceIndex;
 use core::{
     cmp::Ordering, fmt, hash, marker::PointeeSized, mem::MaybeUninit, num::NonZero,
