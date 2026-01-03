@@ -27,6 +27,8 @@
 #![cfg_attr(feature = "ptr_internals", feature(ptr_internals))]
 #![cfg_attr(feature = "const_index", feature(const_index))]
 
+//! This crate provides [`NonNullConst`], a **non-null, covariant** raw **const** pointer type. It is conceptually the `*const` analogue of [`core::ptr::NonNull`].
+
 #[cfg(any(feature = "slice_ptr_get", feature = "ptr_internals"))]
 use cfg_tt::cfg_tt;
 
