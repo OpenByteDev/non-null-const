@@ -26,6 +26,7 @@
 #![cfg_attr(feature = "dispatch_from_dyn", feature(dispatch_from_dyn))]
 #![cfg_attr(feature = "ptr_internals", feature(ptr_internals))]
 #![cfg_attr(feature = "const_index", feature(const_index))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 
 //! This crate provides [`NonNullConst`], a **non-null, covariant** raw **const** pointer type. It is conceptually the `*const` analogue of [`core::ptr::NonNull`].
 

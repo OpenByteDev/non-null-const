@@ -47,3 +47,7 @@ dispatch_from_dyn = []
 ptr_internals = []
 const_convert = []
 const_index = []
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
