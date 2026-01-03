@@ -42,7 +42,7 @@ use core::ops::DispatchFromDyn;
 use core::ptr;
 #[cfg(feature = "ptr_internals")]
 use core::ptr::Unique;
-#[cfg(any(feature = "ptr_internals", feature = "slice_ptr_get"))]
+#[cfg(any(feature = "slice_ptr_get"))]
 use core::slice::SliceIndex;
 use core::{
     cmp::Ordering, fmt, hash, marker::PointeeSized, mem::MaybeUninit, num::NonZero,
@@ -206,7 +206,7 @@ impl<T: PointeeSized> NonNullConst<T> {
     /// This method will panic during const evaluation if the pointer cannot be
     /// determined to be null or not. See [`is_null`] for more information.
     ///
-    /// [`is_null`]: ../primitive.pointer.html#method.is_null-1
+    /// [`is_null`]: https://doc.rust-lang.org/core/primitive.pointer.html#method.is_null
     ///
     /// # Examples
     ///
@@ -455,7 +455,7 @@ impl<T: PointeeSized> NonNullConst<T> {
     /// `count` is in units of **bytes**.
     ///
     /// This is purely a convenience for casting to a `u8` pointer and
-    /// using [offset][pointer::offset] on it. See that method for documentation
+    /// using [offset][`pointer::offset`] on it. See that method for documentation
     /// and safety requirements.
     ///
     /// For non-`Sized` pointees this operation changes only the data pointer,
