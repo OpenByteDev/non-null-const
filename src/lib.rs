@@ -8,7 +8,8 @@
     unsize,
     const_destruct,
     const_option_ops,
-    intra_doc_pointers
+    intra_doc_pointers,
+    const_convert
 )]
 #![cfg_attr(feature = "ptr_as_uninit", feature(ptr_as_uninit))]
 #![cfg_attr(feature = "ptr_cast_array", feature(ptr_cast_array))]
@@ -24,25 +25,27 @@
 #![cfg_attr(feature = "coerce_unsized", feature(coerce_unsized))]
 #![cfg_attr(feature = "dispatch_from_dyn", feature(dispatch_from_dyn))]
 #![cfg_attr(feature = "ptr_internals", feature(ptr_internals))]
-#![cfg_attr(feature = "const_convert", feature(const_convert))]
 #![cfg_attr(feature = "const_index", feature(const_index))]
 
+#[cfg(any(feature = "slice_ptr_get", feature = "ptr_internals"))]
 use cfg_tt::cfg_tt;
 
+#[cfg(any(feature = "coerce_unsized", feature = "dispatch_from_dyn"))]
+use core::marker::Unsize;
 #[cfg(feature = "coerce_unsized")]
 use core::ops::CoerceUnsized;
-use core::{
-    cmp::Ordering,
-    fmt, hash,
-    marker::PointeeSized,
-    mem::MaybeUninit,
-    num::NonZero,
-    pin::PinCoerceUnsized,
-    ptr::{self, Unique},
-    slice::SliceIndex,
-};
 #[cfg(feature = "dispatch_from_dyn")]
-use core::{marker::Unsize, ops::DispatchFromDyn};
+use core::ops::DispatchFromDyn;
+#[cfg(feature = "ptr_metadata")]
+use core::ptr;
+#[cfg(feature = "ptr_internals")]
+use core::ptr::Unique;
+#[cfg(any(feature = "ptr_internals", feature = "slice_ptr_get"))]
+use core::slice::SliceIndex;
+use core::{
+    cmp::Ordering, fmt, hash, marker::PointeeSized, mem::MaybeUninit, num::NonZero,
+    pin::PinCoerceUnsized,
+};
 
 pub use core::ptr::NonNull as NonNullMut;
 
